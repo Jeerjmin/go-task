@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package autoparts;
+
+option go_package = "./gen;autoparts_v1";
+
+service Autoparts {
+  rpc GetWarehouses (GetWarehousesRequest) returns (GetWarehousesResponse);
+  rpc GetComponents (GetComponentsRequest) returns (GetComponentsResponse);
+}
+
+message GetWarehousesRequest {}
+
+message GetWarehousesResponse {
+  string json_data = 1;
+}
+
+message GetComponentsRequest {
+  int32 car_brand_id = 1;
+}
+
+message GetComponentsResponse {
+  string json_data = 1;
+}
